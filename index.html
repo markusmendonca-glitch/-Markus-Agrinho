@@ -1,0 +1,1240 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agro Forte, Futuro Sustentável - Agrinho</title>
+    <style>
+        /* --- ESTILOS GERAIS E PALETA DE CORES (BRANCO E VERMELHO) --- */
+        :root {
+            --vermelho-principal: #D32F2F; /* Vermelho vibrante e institucional */
+            --vermelho-escuro: #8B0000;    /* Vermelho escuro para contrastes e títulos */
+            --vermelho-claro: #FFEBEE;     /* Fundo vermelho bem suave para blocos de leitura */
+            --vermelho-suave: #FFCDD2;     /* Bordas e separadores */
+            --branco: #FFFFFF;             /* Pureza e clareza visual */
+            --cinza-claro: #F9F9F9;        /* Fundos alternativos para quebra de leitura */
+            --texto-escuro: #212121;       /* Cinza quase preto para excelente legibilidade */
+            --texto-medio: #555555;        /* Subtítulos e parágrafos secundários */
+            --sombra: rgba(211, 47, 47, 0.15);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--branco);
+            color: var(--texto-escuro);
+            line-height: 1.6;
+        }
+
+        /* --- CABEÇALHO / HEADER --- */
+        header {
+            background-color: var(--branco);
+            box-shadow: 0 4px 20px var(--sombra);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 3px solid var(--vermelho-principal);
+        }
+
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 20px;
+        }
+
+        .logo-area {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        /* Ícone decorativo SVG integrado */
+        .logo-icon {
+            width: 45px;
+            height: 45px;
+            background: var(--vermelho-principal);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--branco);
+            font-weight: bold;
+            font-size: 24px;
+        }
+
+        .logo-text h1 {
+            font-size: 20px;
+            color: var(--vermelho-escuro);
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            line-height: 1.1;
+        }
+
+        .logo-text span {
+            font-size: 11px;
+            color: var(--texto-medio);
+            display: block;
+            font-weight: 600;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 20px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--texto-escuro);
+            font-weight: 600;
+            font-size: 14px;
+            text-transform: uppercase;
+            padding: 8px 12px;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--vermelho-principal);
+            background-color: var(--vermelho-claro);
+        }
+
+        /* Botão Destaque no Header */
+        .btn-header {
+            background-color: var(--vermelho-principal);
+            color: var(--branco) !important;
+        }
+
+        .btn-header:hover {
+            background-color: var(--vermelho-escuro) !important;
+            color: var(--branco) !important;
+        }
+
+        /* --- SEÇÃO HERO (BANNER PRINCIPAL) --- */
+        .hero {
+            background: linear-gradient(135deg, var(--vermelho-escuro) 0%, var(--vermelho-principal) 100%);
+            color: var(--branco);
+            padding: 80px 20px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Padrão geométrico sutil no fundo usando SVG inline */
+        .hero::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: radial-gradient(circle at 20% 30%, rgba(255,255,255,0.05) 1px, transparent 1px),
+                              radial-gradient(circle at 75% 60%, rgba(255,255,255,0.05) 1px, transparent 1px);
+            background-size: 40px 40px;
+            pointer-events: none;
+        }
+
+        .hero-container {
+            max-width: 900px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+
+        .badge-agrinho {
+            background-color: rgba(255, 255, 255, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.4);
+            padding: 6px 16px;
+            border-radius: 50px;
+            font-size: 13px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            display: inline-block;
+            margin-bottom: 24px;
+        }
+
+        .hero h2 {
+            font-size: 38px;
+            font-weight: 800;
+            line-height: 1.25;
+            margin-bottom: 20px;
+            text-shadow: 1px 2px 4px rgba(0,0,0,0.2);
+        }
+
+        .hero p {
+            font-size: 18px;
+            margin-bottom: 35px;
+            color: var(--vermelho-claro);
+            max-width: 750px;
+            margin-left: auto;
+            margin-right: auto;
+            font-weight: 400;
+        }
+
+        .hero-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 14px 28px;
+            font-size: 15px;
+            font-weight: 700;
+            border-radius: 8px;
+            text-decoration: none;
+            text-transform: uppercase;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-primary {
+            background-color: var(--branco);
+            color: var(--vermelho-principal);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+        }
+
+        .btn-primary:hover {
+            background-color: var(--vermelho-claro);
+            transform: translateY(-2px);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            color: var(--branco);
+            border: 2px solid var(--branco);
+        }
+
+        .btn-outline:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+            transform: translateY(-2px);
+        }
+
+        /* --- SEÇÃO DE INTRODUÇÃO (O GRANDE EQUILÍBRIO) --- */
+        .intro {
+            padding: 80px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title h2 {
+            font-size: 32px;
+            color: var(--vermelho-escuro);
+            font-weight: 800;
+            position: relative;
+            padding-bottom: 15px;
+            display: inline-block;
+        }
+
+        .section-title h2::after {
+            content: "";
+            width: 80px;
+            height: 4px;
+            background-color: var(--vermelho-principal);
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 2px;
+        }
+
+        .section-title p {
+            color: var(--texto-medio);
+            margin-top: 15px;
+            font-size: 16px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .grid-intro {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .intro-text p {
+            font-size: 16px;
+            color: var(--texto-escuro);
+            margin-bottom: 20px;
+            text-align: justify;
+        }
+
+        .intro-text strong {
+            color: var(--vermelho-principal);
+        }
+
+        /* Elemento gráfico representativo em CSS puro */
+        .balance-illustration {
+            background-color: var(--vermelho-claro);
+            border: 2px dashed var(--vermelho-principal);
+            border-radius: 16px;
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            align-items: center;
+            justify-content: center;
+            box-shadow: inset 0 0 20px rgba(211,47,47,0.05);
+            text-align: center;
+            min-height: 320px;
+        }
+
+        .balance-scale {
+            display: flex;
+            align-items: flex-end;
+            justify-content: space-around;
+            width: 100%;
+            max-width: 300px;
+            height: 120px;
+            position: relative;
+            border-bottom: 4px solid var(--vermelho-principal);
+            padding-bottom: 10px;
+        }
+
+        .balance-scale::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 0;
+            border-left: 20px solid transparent;
+            border-right: 20px solid transparent;
+            border-bottom: 30px solid var(--vermelho-principal);
+        }
+
+        .scale-item {
+            width: 80px;
+            background-color: var(--branco);
+            border: 2px solid var(--vermelho-principal);
+            border-radius: 8px;
+            padding: 10px;
+            font-size: 12px;
+            font-weight: bold;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            z-index: 2;
+        }
+
+        .scale-item.prod {
+            color: var(--vermelho-principal);
+            transform: translateY(-10px);
+            animation: floatLeft 4s ease-in-out infinite alternate;
+        }
+
+        .scale-item.env {
+            color: var(--vermelho-escuro);
+            transform: translateY(-10px);
+            animation: floatRight 4s ease-in-out infinite alternate;
+        }
+
+        @keyframes floatLeft {
+            0% { transform: translateY(-5px); }
+            100% { transform: translateY(-15px); }
+        }
+
+        @keyframes floatRight {
+            0% { transform: translateY(-15px); }
+            100% { transform: translateY(-5px); }
+        }
+
+        .illustration-caption {
+            font-size: 14px;
+            font-weight: 700;
+            color: var(--vermelho-escuro);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-top: 10px;
+        }
+
+        /* --- SEÇÃO DE DADOS CIENTÍFICOS (EMBRAPA) --- */
+        .embrapa-stats {
+            background-color: var(--cinza-claro);
+            padding: 80px 20px;
+            border-top: 1px solid var(--vermelho-suave);
+            border-bottom: 1px solid var(--vermelho-suave);
+        }
+
+        .embrapa-stats .logo-partnership {
+            text-align: center;
+            font-size: 12px;
+            font-weight: 700;
+            color: var(--vermelho-principal);
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 40px;
+        }
+
+        .stats-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .stat-card {
+            background: var(--branco);
+            border-radius: 12px;
+            padding: 35px 30px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.03);
+            border-left: 5px solid var(--vermelho-principal);
+            transition: transform 0.3s ease;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px var(--sombra);
+        }
+
+        .stat-number {
+            font-size: 42px;
+            font-weight: 800;
+            color: var(--vermelho-escuro);
+            line-height: 1;
+            margin-bottom: 10px;
+        }
+
+        .stat-title {
+            font-size: 16px;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: var(--texto-escuro);
+            text-transform: uppercase;
+        }
+
+        .stat-desc {
+            font-size: 14px;
+            color: var(--texto-medio);
+        }
+
+        /* --- SEÇÃO "COMO OBTER O EQUILÍBRIO" (PRÁTICAS SUSTENTÁVEIS) --- */
+        .solutions {
+            padding: 80px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .solutions-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .solution-card {
+            background-color: var(--branco);
+            border: 1px solid var(--vermelho-suave);
+            border-radius: 16px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .solution-card:hover {
+            box-shadow: 0 10px 30px var(--sombra);
+            border-color: var(--vermelho-principal);
+        }
+
+        .solution-header {
+            background: linear-gradient(45deg, var(--vermelho-claro) 0%, var(--branco) 100%);
+            padding: 25px;
+            border-bottom: 1px solid var(--vermelho-suave);
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .solution-icon {
+            width: 50px;
+            height: 50px;
+            background: var(--vermelho-principal);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--branco);
+            font-weight: bold;
+            font-size: 20px;
+            flex-shrink: 0;
+        }
+
+        .solution-title-box h3 {
+            font-size: 18px;
+            color: var(--vermelho-escuro);
+            font-weight: 700;
+        }
+
+        .solution-body {
+            padding: 25px;
+            flex-grow: 1;
+        }
+
+        .solution-body p {
+            font-size: 14px;
+            color: var(--texto-medio);
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+
+        .solution-bullet-list {
+            list-style: none;
+        }
+
+        .solution-bullet-list li {
+            font-size: 13px;
+            color: var(--texto-escuro);
+            margin-bottom: 8px;
+            position: relative;
+            padding-left: 18px;
+        }
+
+        .solution-bullet-list li::before {
+            content: "✓";
+            color: var(--vermelho-principal);
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+
+        .solution-footer {
+            padding: 20px 25px;
+            background-color: var(--cinza-claro);
+            border-top: 1px solid var(--vermelho-suave);
+            font-size: 12px;
+            font-weight: bold;
+            color: var(--vermelho-principal);
+            text-transform: uppercase;
+            text-align: center;
+        }
+
+        /* --- SEÇÃO PRESERVAÇÃO E BIOMAS (ICMBio) --- */
+        .icmbio-section {
+            background-color: var(--vermelho-claro);
+            padding: 80px 20px;
+            border-top: 4px solid var(--vermelho-principal);
+        }
+
+        .icmbio-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .icmbio-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .icmbio-header h2 {
+            color: var(--vermelho-escuro);
+            font-size: 32px;
+            font-weight: 800;
+            margin-bottom: 10px;
+        }
+
+        .icmbio-header p {
+            font-size: 16px;
+            color: var(--texto-escuro);
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .icmbio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .icmbio-card {
+            background-color: var(--branco);
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            border-top: 5px solid var(--vermelho-escuro);
+        }
+
+        .icmbio-card h3 {
+            color: var(--vermelho-escuro);
+            font-size: 18px;
+            margin-bottom: 15px;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+
+        .icmbio-card p {
+            font-size: 14px;
+            color: var(--texto-medio);
+            margin-bottom: 15px;
+        }
+
+        /* --- COMPONENT INTELEQUENT INTERATIVO (CSS APENAS) --- */
+        /* Uma simulação interativa de conscientização sem uso de JS complexo */
+        .interactive-quiz {
+            padding: 80px 20px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .quiz-container {
+            background-color: var(--branco);
+            border: 2px solid var(--vermelho-principal);
+            border-radius: 16px;
+            padding: 40px;
+            box-shadow: 0 8px 30px var(--sombra);
+        }
+
+        .quiz-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .quiz-header h3 {
+            color: var(--vermelho-escuro);
+            font-size: 24px;
+            font-weight: 800;
+            margin-bottom: 10px;
+        }
+
+        .quiz-header p {
+            font-size: 14px;
+            color: var(--texto-medio);
+        }
+
+        .quiz-card {
+            border: 1px solid var(--vermelho-suave);
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 15px;
+            transition: all 0.3s;
+        }
+
+        .quiz-card:hover {
+            border-color: var(--vermelho-principal);
+            background-color: var(--vermelho-claro);
+        }
+
+        /* O truque do CSS Interativo */
+        .quiz-card details summary {
+            font-weight: 700;
+            color: var(--texto-escuro);
+            cursor: pointer;
+            outline: none;
+            font-size: 16px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .quiz-card details summary::-webkit-details-marker {
+            display: none;
+        }
+
+        .quiz-card details summary::after {
+            content: "➔";
+            color: var(--vermelho-principal);
+            transition: transform 0.3s;
+        }
+
+        .quiz-card details[open] summary::after {
+            transform: rotate(90deg);
+        }
+
+        .quiz-content {
+            margin-top: 15px;
+            padding-top: 15px;
+            border-top: 1px solid var(--vermelho-suave);
+            font-size: 14px;
+            color: var(--texto-medio);
+        }
+
+        .quiz-badge {
+            display: inline-block;
+            background-color: var(--vermelho-principal);
+            color: var(--branco);
+            font-size: 11px;
+            padding: 3px 8px;
+            border-radius: 4px;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        /* --- SEÇÃO FORMULÁRIO DE CONSCIENTIZAÇÃO --- */
+        .cta-section {
+            background: linear-gradient(135deg, var(--vermelho-escuro) 0%, var(--vermelho-principal) 100%);
+            color: var(--branco);
+            padding: 80px 20px;
+        }
+
+        .cta-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .cta-info h2 {
+            font-size: 32px;
+            font-weight: 800;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .cta-info p {
+            font-size: 16px;
+            margin-bottom: 25px;
+            color: var(--vermelho-claro);
+        }
+
+        .bullet-commitments {
+            list-style: none;
+        }
+
+        .bullet-commitments li {
+            font-size: 15px;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .bullet-commitments li::before {
+            content: "✓";
+            background-color: var(--branco);
+            color: var(--vermelho-principal);
+            width: 22px;
+            height: 22px;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            font-weight: 900;
+            flex-shrink: 0;
+        }
+
+        .form-card {
+            background-color: var(--branco);
+            border-radius: 16px;
+            padding: 40px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            color: var(--texto-escuro);
+        }
+
+        .form-card h3 {
+            font-size: 20px;
+            color: var(--vermelho-escuro);
+            margin-bottom: 20px;
+            font-weight: 800;
+            text-align: center;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 13px;
+            font-weight: 700;
+            margin-bottom: 8px;
+            color: var(--texto-escuro);
+            text-transform: uppercase;
+        }
+
+        .form-group input, .form-group select, .form-group textarea {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid var(--vermelho-suave);
+            border-radius: 8px;
+            outline: none;
+            font-size: 14px;
+            transition: all 0.3s;
+        }
+
+        .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+            border-color: var(--vermelho-principal);
+            box-shadow: 0 0 8px rgba(211,47,47,0.2);
+        }
+
+        .btn-submit {
+            width: 100%;
+            background-color: var(--vermelho-principal);
+            color: var(--branco);
+            border: none;
+            padding: 15px;
+            font-size: 15px;
+            font-weight: 700;
+            border-radius: 8px;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: background 0.3s;
+            margin-top: 10px;
+        }
+
+        .btn-submit:hover {
+            background-color: var(--vermelho-escuro);
+        }
+
+        /* --- FOOTER / RODAPÉ --- */
+        footer {
+            background-color: var(--vermelho-escuro);
+            color: var(--branco);
+            padding: 60px 20px 20px;
+            border-top: 5px solid var(--vermelho-principal);
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            padding-bottom: 40px;
+            margin-bottom: 30px;
+        }
+
+        .footer-logo h4 {
+            font-size: 18px;
+            font-weight: 800;
+            text-transform: uppercase;
+            margin-bottom: 15px;
+            letter-spacing: 1px;
+        }
+
+        .footer-logo p {
+            font-size: 13px;
+            color: var(--vermelho-claro);
+            max-width: 300px;
+        }
+
+        .footer-links h5 {
+            font-size: 14px;
+            text-transform: uppercase;
+            margin-bottom: 15px;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+        }
+
+        .footer-links ul {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links a {
+            color: var(--vermelho-claro);
+            text-decoration: none;
+            font-size: 13px;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: var(--branco);
+            padding-left: 5px;
+        }
+
+        .footer-info h5 {
+            font-size: 14px;
+            text-transform: uppercase;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        .footer-info p {
+            font-size: 13px;
+            color: var(--vermelho-claro);
+            margin-bottom: 10px;
+        }
+
+        .copyright {
+            text-align: center;
+            font-size: 12px;
+            color: var(--vermelho-claro);
+            max-width: 1200px;
+            margin: 0 auto;
+            padding-top: 10px;
+        }
+
+        .copyright a {
+            color: var(--branco);
+            text-decoration: underline;
+        }
+
+        /* --- RESPONSIVIDADE --- */
+        @media (max-width: 992px) {
+            .grid-intro {
+                grid-template-columns: 1fr;
+            }
+            .cta-container {
+                grid-template-columns: 1fr;
+            }
+            .hero h2 {
+                font-size: 30px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .header-container {
+                flex-direction: column;
+                gap: 15px;
+                text-align: center;
+            }
+            nav ul {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            .hero {
+                padding: 60px 15px;
+            }
+            .hero h2 {
+                font-size: 26px;
+            }
+            .hero p {
+                font-size: 15px;
+            }
+            .section-title h2 {
+                font-size: 26px;
+            }
+            .intro, .embrapa-stats, .solutions, .icmbio-section, .interactive-quiz, .cta-section {
+                padding: 50px 15px;
+            }
+            .form-card {
+                padding: 25px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- CABEÇALHO / LOGO / MENU -->
+    <header>
+        <div class="header-container">
+            <div class="logo-area">
+                <div class="logo-icon">A</div>
+                <div class="logo-text">
+                    <h1>Agrinho 2026</h1>
+                    <span>Agro Forte, Futuro Sustentável</span>
+                </div>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#inicio" class="active">Início</a></li>
+                    <li><a href="#dados">Ciência & Dados</a></li>
+                    <li><a href="#solucoes">Soluções</a></li>
+                    <li><a href="#preservacao">Conservação</a></li>
+                    <li><a href="#participe" class="btn-header">Participe</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- SEÇÃO HERO (BOAS-VINDAS / INTRODUÇÃO DO TEMA) -->
+    <section class="hero" id="inicio">
+        <div class="hero-container">
+            <span class="badge-agrinho">Agrinho 2026</span>
+            <h2>Agro forte, futuro sustentável:<br>equilíbrio entre produção e meio ambiente</h2>
+            <p>Descubra como o Brasil une tecnologia no campo, respeito à biodiversidade e inovação para alimentar o mundo sem esgotar o planeta.</p>
+            <div class="hero-buttons">
+                <a href="#dados" class="btn btn-primary">Ver Dados Científicos</a>
+                <a href="#solucoes" class="btn btn-outline">Aprender Práticas</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- SEÇÃO DE INTRODUÇÃO E FILOSOFIA DE EQUILÍBRIO -->
+    <section class="intro">
+        <div class="section-title">
+            <h2>O Grande Desafio de Nossa Geração</h2>
+            <p>Alimentar uma população global crescente enquanto protegemos a terra, as águas e as florestas brasileiras.</p>
+        </div>
+        <div class="grid-intro">
+            <div class="intro-text">
+                <p>O agronegócio moderno no Brasil superou o antigo dilema de que para produzir mais é necessário desmatar mais. Hoje, a palavra-chave é <strong>tecnologia poupa-terra</strong>.</p>
+                <p>Graças às pesquisas de ponta, o produtor rural consegue otimizar as áreas de cultivo já existentes, transformando pastagens degradadas em ricas lavouras e aplicando o conceito de <strong>agricultura regenerativa</strong>.</p>
+                <p>Garantir um <strong>Agro Forte</strong> significa manter nossa economia pujante, gerando empregos e alimentos saudáveis. Garantir um <strong>Futuro Sustentável</strong> significa assegurar que a água, o solo e a polinização biológica continuem vivos por gerações.</p>
+            </div>
+            <div class="balance-illustration">
+                <div class="balance-scale">
+                    <div class="scale-item prod">Produção Forte</div>
+                    <div class="scale-item env">Meio Ambiente</div>
+                </div>
+                <div class="illustration-caption">Equilíbrio Perfeito e Possível</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SEÇÃO DE DADOS DA EMBRAPA (PRODUÇÃO E TECNOLOGIA) -->
+    <section class="embrapa-stats" id="dados">
+        <div class="logo-partnership">Dados & Conquistas • Base Tecnológica EMBRAPA</div>
+        <div class="section-title">
+            <h2>A Ciência a Serviço da Terra</h2>
+            <p>Veja os números consolidados pela pesquisa agropecuária brasileira, provando que produtividade e conservação andam de mãos dadas.</p>
+        </div>
+        <div class="stats-grid">
+            <!-- Card 1 -->
+            <div class="stat-card">
+                <div class="stat-number">+510%</div>
+                <div class="stat-title">Aumento na Produção</div>
+                <div class="stat-desc">Nas últimas cinco décadas, a produção brasileira de grãos cresceu substancialmente, garantindo o abastecimento nacional e de exportação.</div>
+            </div>
+            <!-- Card 2 -->
+            <div class="stat-card">
+                <div class="stat-number">Apenas +60%</div>
+                <div class="stat-title">Área Plantada</div>
+                <div class="stat-desc">Enquanto a produtividade disparou mais de 500%, a área física utilizada cresceu muito pouco, poupando milhões de hectares de florestas nativas.</div>
+            </div>
+            <!-- Card 3 -->
+            <div class="stat-card">
+                <div class="stat-number">95%</div>
+                <div class="stat-title">Área sob Plantio Direto</div>
+                <div class="stat-desc">O Brasil é líder mundial na técnica que evita revolver a terra, mantendo a umidade natural do solo e capturando carbono da atmosfera de forma orgânica.</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SEÇÃO COMO AGIR (PRÁTICAS SUSTENTÁVEIS DE SUCESSO) -->
+    <section class="solutions" id="solucoes">
+        <div class="section-title">
+            <h2>Qual é a melhor maneira de cuidar e produzir?</h2>
+            <p>Conheça os três pilares tecnológicos que revolucionaram o campo brasileiro com sustentabilidade prática.</p>
+        </div>
+        <div class="solutions-grid">
+            <!-- Prática 1 -->
+            <div class="solution-card">
+                <div>
+                    <div class="solution-header">
+                        <div class="solution-icon">1</div>
+                        <div class="solution-title-box">
+                            <h3>Integração Lavoura-Pecuária-Floresta (ILPF)</h3>
+                        </div>
+                    </div>
+                    <div class="solution-body">
+                        <p>Estratégia produtiva que integra diferentes sistemas agrícolas, pecuários e florestais dentro de uma mesma área de maneira sinérgica.</p>
+                        <ul class="solution-bullet-list">
+                            <li>Otimiza o uso da terra ao longo do ano.</li>
+                            <li>Gera sombra e bem-estar para o gado.</li>
+                            <li>Neutraliza emissões através do plantio de árvores.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="solution-footer">Tecnologia Certificada Embrapa</div>
+            </div>
+
+            <!-- Prática 2 -->
+            <div class="solution-card">
+                <div>
+                    <div class="solution-header">
+                        <div class="solution-icon">2</div>
+                        <div class="solution-title-box">
+                            <h3>Sistema de Plantio Direto (SPD)</h3>
+                        </div>
+                    </div>
+                    <div class="solution-body">
+                        <p>O solo nunca fica descoberto. As sementes são plantadas diretamente sobre a palha da colheita anterior, sem arar a terra.</p>
+                        <ul class="solution-bullet-list">
+                            <li>Elimina a erosão do solo provocada pelas chuvas.</li>
+                            <li>Mantém o solo úmido e reduz o gasto de água.</li>
+                            <li>Preserva os microrganismos benéficos da terra.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="solution-footer">Prática Conservacionista Essencial</div>
+            </div>
+
+            <!-- Prática 3 -->
+            <div class="solution-card">
+                <div>
+                    <div class="solution-header">
+                        <div class="solution-icon">3</div>
+                        <div class="solution-title-box">
+                            <h3>Controle e Defesa Biológica</h3>
+                        </div>
+                    </div>
+                    <div class="solution-body">
+                        <p>Uso de inimigos naturais (insetos benéficos, bactérias e fungos) para combater pragas da lavoura, diminuindo drasticamente os químicos.</p>
+                        <ul class="solution-bullet-list">
+                            <li>Menos poluição nas águas subterrâneas.</li>
+                            <li>Segurança alimentar máxima para quem consome.</li>
+                            <li>Protege polinizadores essenciais como as abelhas.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="solution-footer">Inovação em Biotecnologia</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SEÇÃO ICMBio (PRESERVAÇÃO AMBIENTAL) -->
+    <section class="icmbio-section" id="preservacao">
+        <div class="icmbio-container">
+            <div class="icmbio-header">
+                <h2>Cuidando da Vida Silvestre e das Águas</h2>
+                <p>Inspirados nas ações do <strong>ICMBio</strong> e na Legislação Ambiental Brasileira, as fazendas sustentáveis atuam como santuários ecológicos.</p>
+            </div>
+            <div class="icmbio-grid">
+                <!-- Card 1 -->
+                <div class="icmbio-card">
+                    <h3>Áreas de Preservação Permanente (APPs)</h3>
+                    <p>Faixas de terra às margens de rios, nascentes e encostas que devem ser mantidas intactas com vegetação nativa.</p>
+                    <p><strong>Benefício:</strong> Protege o leito dos rios contra o assoreamento e garante água limpa para toda a comunidade próxima.</p>
+                </div>
+                <!-- Card 2 -->
+                <div class="icmbio-card">
+                    <h3>Reserva Legal (RL)</h3>
+                    <p>Porcentagem de mata nativa que toda propriedade rural é obrigada a manter preservada (variando de 20% a 80% conforme o bioma).</p>
+                    <p><strong>Benefício:</strong> Garante corredores ecológicos fundamentais para a sobrevivência e migração de fauna nativa.</p>
+                </div>
+                <!-- Card 3 -->
+                <div class="icmbio-card">
+                    <h3>Corredores de Biodiversidade</h3>
+                    <p>Conexões de vegetação entre matas preservadas, permitindo o fluxo seguro de animais silvestres e plantas.</p>
+                    <p><strong>Benefício:</strong> Evita o isolamento genético de espécies e ajuda a manter o equilíbrio de ecossistemas complexos.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SEÇÃO COMPONENTE INTERATIVO (CONHECIMENTO RÁPIDO) -->
+    <section class="interactive-quiz">
+        <div class="quiz-container">
+            <div class="quiz-header">
+                <h3>O que você já aprendeu sobre o Agro Sustentável?</h3>
+                <p>Clique nas perguntas abaixo para descobrir fatos interessantes e testar sua percepção ecológica.</p>
+            </div>
+
+            <!-- Item 1 -->
+            <div class="quiz-card">
+                <details>
+                    <summary>O Brasil precisa desmatar mais para produzir mais comida?</summary>
+                    <div class="quiz-content">
+                        <span class="quiz-badge">CIÊNCIA</span>
+                        <p><strong>Não!</strong> Graças às tecnologias poupa-terra desenvolvidas pela Embrapa, o Brasil consegue multiplicar sua produção focando no aumento de produtividade por hectare e na recuperação de pastagens antigas já degradadas, sem avançar sobre novas áreas de floresta nativa.</p>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Item 2 -->
+            <div class="quiz-card">
+                <details>
+                    <summary>Como as árvores dentro do pasto ajudam o boi?</summary>
+                    <div class="quiz-content">
+                        <span class="quiz-badge">ILPF</span>
+                        <p>As árvores oferecem sombra natural, diminuindo o estresse térmico do animal em dias quentes. Isso aumenta o bem-estar animal, acelera o ganho de peso e, simultaneamente, ajuda a fixar nitrogênio no solo e a capturar carbono da atmosfera.</p>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Item 3 -->
+            <div class="quiz-card">
+                <details>
+                    <summary>Qual o papel do cidadão urbano nesse ciclo?</summary>
+                    <div class="quiz-content">
+                        <span class="quiz-badge">CIDADANIA</span>
+                        <p>O cidadão urbano apoia o agro sustentável ao dar preferência a marcas e produtores que possuem selos de rastreabilidade, apoiam a conservação ambiental, evitam o desperdício de alimentos e promovem a reciclagem de embalagens.</p>
+                    </div>
+                </details>
+            </div>
+        </div>
+    </section>
+
+    <!-- FORMULÁRIO DE CONSCIENTIZAÇÃO E COMPROMISSO -->
+    <section class="cta-section" id="participe">
+        <div class="cta-container">
+            <div class="cta-info">
+                <h2>Faça parte desta transformação sustentável</h2>
+                <p>Queremos saber sua opinião e de que forma você pode colaborar para espalhar essa mensagem de equilíbrio em sua escola, comunidade ou fazenda.</p>
+                <ul class="bullet-commitments">
+                    <li>Disseminar a importância do Plantio Direto.</li>
+                    <li>Valorizar a ciência agrícola brasileira (Embrapa).</li>
+                    <li>Apoiar a preservação de biomas locais (ICMBio).</li>
+                    <li>Criar projetos escolares inovadores de sustentabilidade.</li>
+                </ul>
+            </div>
+            <div class="form-card">
+                <h3>Escreva sua ideia para um Futuro Sustentável</h3>
+                <form onsubmit="event.preventDefault(); document.getElementById('success-message').style.display = 'block';">
+                    <div class="form-group">
+                        <label for="name">Seu Nome Completo</label>
+                        <input type="text" id="name" placeholder="Ex: Maria Silva" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="category">Quem é você?</label>
+                        <select id="category" required>
+                            <option value="">Selecione...</option>
+                            <option value="estudante">Estudante (Categoria Agrinho)</option>
+                            <option value="professor">Professor / Educador</option>
+                            <option value="produtor">Produtor Rural</option>
+                            <option value="comunidade">Cidadão Interessado</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Sua sugestão ou projeto para o agro sustentável</label>
+                        <textarea id="message" rows="4" placeholder="Escreva aqui como podemos ter um agro forte sem prejudicar as florestas..." required></textarea>
+                    </div>
+                    <button type="submit" class="btn-submit">Enviar minha ideia</button>
+                    
+                    <div id="success-message" style="display:none; margin-top:20px; padding:15px; background-color:#E8F5E9; border-left:4px solid #4CAF50; color:#2E7D32; border-radius:4px; font-size:14px; font-weight:600; text-align:center;">
+                        Sua mensagem foi enviada com sucesso! Parabéns por apoiar o equilíbrio sustentável!
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- RODAPÉ DO SITE -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-logo">
+                <h4>Agrinho 2026</h4>
+                <p>Portal educacional fictício para fomento ao concurso de redação e robótica do programa Agrinho do Estado do Paraná.</p>
+            </div>
+            <div class="footer-links">
+                <h5>Fontes Confiáveis</h5>
+                <ul>
+                    <li><a href="https://www.embrapa.br" target="_blank">Portal Embrapa</a></li>
+                    <li><a href="https://www.gov.br/icmbio" target="_blank">Portal ICMBio</a></li>
+                    <li><a href="https://www.sistemafaep.org.br" target="_blank">Sistema FAEP / SENAR</a></li>
+                </ul>
+            </div>
+            <div class="footer-info">
+                <h5>Compromisso Ambiental</h5>
+                <p>Produzir mais e preservar sempre: esse é o equilíbrio que desenha o futuro do Brasil.</p>
+                <p><strong>Tema:</strong> "Agro forte, futuro sustentável: equilíbrio entre produção e meio ambiente."</p>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2026 Concurso Agrinho. Todos os direitos reservados. Trabalho escolar focado no desenvolvimento de ferramentas informativas.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
